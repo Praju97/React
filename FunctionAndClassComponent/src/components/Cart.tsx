@@ -15,12 +15,14 @@ class Cart extends React.Component<Props, State> {
         }
     }
 
+    handleClick() {
+        this.setState((prevState) => ({ isOpen: !prevState.isOpen }))
+    }
+
     render() {
         return(
             <div>
-                <button  onClick={() => {
-                    this.setState((prevState) => ({ isOpen: !prevState.isOpen }))
-                }}>
+                <button  onClick={this.handleClick}>
                     <FiShoppingCart />2 Pizzas
                     </button>
                 <div style={{display: this.state.isOpen? 'block' : 'none'}}>
